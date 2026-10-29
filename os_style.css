@@ -1,0 +1,401 @@
+/* OS Specific Styles - os_style.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #008080; /* Classic Windows teal background */
+    font-family: 'MS Sans Serif', 'Arial', sans-serif; /* Classic UI font */
+    font-size: 12px;
+}
+
+#desktop {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For positioning windows */
+}
+
+#taskbar {
+    background-color: #C0C0C0; /* Classic grey */
+    border-top: 2px solid #FFFFFF;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    height: 30px; /* Approximate height */
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure taskbar is on top */
+}
+
+#start-menu-button {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 2px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#start-menu-button:active {
+    border-style: inset;
+}
+
+#open-windows-icons {
+    flex-grow: 1;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Allow scrolling if too many icons */
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.taskbar-icon {
+    background-color: #C0C0C0;
+    border: 1px outset #FFFFFF;
+    padding: 2px 5px;
+    margin-right: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    min-width: 80px; /* Slightly reduced min-width */
+    max-width: 150px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
+}
+
+.taskbar-window-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.taskbar-icon.active {
+    border-style: inset;
+    background-color: #A0A0A0;
+}
+
+#system-tray {
+    border: 1px inset #808080;
+    padding: 2px 5px;
+    margin-left: auto; /* Pushes to the right */
+    font-size: 11px;
+    flex-shrink: 0; /* Prevent tray from shrinking */
+}
+
+/* Start Menu */
+#start-menu {
+    position: absolute;
+    bottom: 30px; /* Height of taskbar */
+    left: 0;
+    width: 220px; /* Slightly wider */
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 999;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.start-menu-hidden {
+    display: none;
+}
+
+.start-menu-header {
+    background-color: #000080; /* Dark blue */
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px 5px 5px 25px; /* Space for icon */
+    margin: -2px -2px 2px -2px; /* Cover borders */
+    position: relative;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    float: left;
+    height: calc(100% + 4px);
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+#start-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 25px; /* Space for header */
+}
+
+#start-menu ul li {
+    padding: 6px 10px; /* Increased padding */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#start-menu ul li:hover {
+    background-color: #000080; /* Dark blue highlight */
+    color: #FFFFFF;
+}
+
+#start-menu ul li img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+#start-menu hr {
+    border: none;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #FFFFFF;
+    margin: 2px 0;
+}
+
+.submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    left: 100%;
+    top: -2px; /* Align with parent li border */
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    width: 170px; /* Wider submenu */
+    z-index: 1001;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.has-submenu:hover > .submenu {
+    display: block;
+}
+
+/* Desktop Icons */
+.desktop-icon {
+    width: 75px;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 10px;
+    cursor: pointer;
+    float: left; 
+}
+
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.desktop-icon span {
+    color: #FFFFFF;
+    background-color: transparent; 
+    padding: 1px 3px;
+    font-size: 11px;
+    word-wrap: break-word;
+}
+
+.desktop-icon:hover span {
+    background-color: #000080; 
+}
+
+/* Window Styles */
+#windows-container {
+    flex-grow: 1;
+    position: relative; 
+    padding: 10px;
+    overflow: hidden; 
+    margin-bottom: 30px; /* Space for taskbar */
+}
+
+.window {
+    position: absolute;
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    min-width: 250px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    resize: both; 
+    overflow: hidden; 
+}
+
+.window.active {
+    z-index: 500; 
+}
+
+.title-bar {
+    background-color: #000080; 
+    color: #FFFFFF;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move; 
+    height: 22px; /* Slightly taller */
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.window-title-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.title-bar .title {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 2px;
+}
+
+.title-bar-controls button {
+    background-color: #C0C0C0;
+    border: 1px outset #FFFFFF;
+    width: 16px;
+    height: 16px; /* Square buttons */
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 2px;
+    line-height: 14px; /* Center text */
+    cursor: pointer;
+}
+
+.title-bar-controls button:active {
+    border-style: inset;
+}
+
+.window-body {
+    padding: 10px;
+    flex-grow: 1;
+    background-color: #FFFFFF; 
+    color: #000000;
+    overflow: auto; 
+    font-size: 12px;
+}
+
+.window-body h2, .window-body h3, .window-body h4 {
+    margin-top: 0;
+    color: #000080;
+}
+
+.window-body hr {
+    border: none;
+    border-top: 1px solid #808080;
+    margin: 10px 0;
+}
+
+.win95-button {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', 'Arial', sans-serif;
+    font-size: 12px;
+    color: #000000;
+    cursor: pointer;
+}
+.win95-button:active {
+    border-style: inset;
+}
+
+.win95-button-link {
+    display: inline-block;
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 3px 10px;
+    font-family: 'MS Sans Serif', 'Arial', sans-serif;
+    font-size: 11px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+.win95-button-link:active {
+    border-style: inset;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 11px;
+    }
+    .desktop-icon {
+        width: 65px;
+        margin: 5px;
+    }
+    .desktop-icon img {
+        width: 28px;
+        height: 28px;
+    }
+    .desktop-icon span {
+        font-size: 10px;
+    }
+    #start-menu {
+        width: 180px;
+    }
+    .taskbar-icon {
+        min-width: 60px;
+        font-size: 10px;
+    }
+    .window {
+        min-width: 200px;
+        min-height: 120px;
+    }
+    .title-bar {
+        height: 20px;
+    }
+    .title-bar-controls button {
+        width: 14px;
+        height: 14px;
+        line-height: 12px;
+    }
+    .window-body {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    #taskbar {
+        height: 35px; /* Slightly taller for touch */
+    }
+    #start-menu-button {
+        padding: 2px 8px;
+    }
+    #system-tray {
+        font-size: 10px;
+    }
+    .desktop-icon {
+        width: 60px;
+    }
+    /* Consider hiding desktop icons or making them scrollable if too many */
+    #windows-container {
+        padding: 5px;
+        margin-bottom: 35px; /* Taskbar height */
+    }
+    .window {
+        /* Make windows open smaller by default on very small screens */
+        /* This would be better handled by JS setting initial size */
+    }
+}
+
+/* BIOS Screen Responsive */
+@media (max-width: 600px) {
+    #bios-screen {
+        font-size: 14px;
+    }
+    #start-prompt {
+        font-size: 14px;
+        padding: 15px;
+        border-width: 5px;
+    }
+    #actual-start-button {
+        font-size: 12px;
+    }
+}
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Clark - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add links to fonts if needed, e.g., Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Add links to any necessary JS libraries (e.g., Three.js) later -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#hero">Jason Clark</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="pages/resume.html">Resume</a></li>
+                <!-- Consider dropdown for more items -->
+                <li><a href="pages/photography.html">Photography</a></li>
+                <li><a href="pages/books.html">Books</a></li>
+                <li><a href="pages/music.html">Music</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content fade-in">
+                <h1>Hi, I'm Jason Clark.</h1>
+                <p class="subtitle">Developer • Photographer • Author • Music Producer</p>
+                <p class="intro">Transforming ideas into digital experiences, capturing moments through photography, crafting stories in books, and producing music that resonates.</p>
+                <!-- Add Call to Action Button if desired -->
+                <!-- <a href="#portfolio" class="cta-button">Explore My Work</a> -->
+            </div>
+            <div id="hero-background-effect"></div> <!-- Placeholder for WebGL effect -->
+        </section>
+
+        <section id="about">
+             <div class="content-wrapper fade-in">
+                <img src="images/profile-picture.jpg" alt="Jason Clark" class="profile-pic">
+                <div>
+                    <h2>About Me</h2>
+                    <p>Highly Skilled and results-oriented professional with over 25 years of experience encompassing manufacturing, fabrication, and information systems. Proven ability to operate and maintain complex machinery, with a strong focus on quality control and process improvement. Demonstrated expertise in welding, painting, and installation of fabricated structures. Possesses exceptional troubleshooting, communication, leadership, and teamwork skills.</p>
+                    <a href="pages/resume.html" class="cta-link">View Full Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="fade-in">My Work</h2>
+            <div class="portfolio-grid">
+                <!-- Portfolio items will be dynamically loaded or manually added -->
+                <div class="portfolio-item fade-in" onclick="window.location.href=\'pages/resume.html\';">
+                    <!-- <img src="images/dev_preview.jpg" alt="Development Preview"> -->
+                    <div class="item-content">
+                        <h3>Development & IT</h3>
+                        <p>Extensive experience in information systems, network administration, and custom software solutions.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item fade-in" onclick="window.location.href=\'pages/photography.html\';">
+                    <img src="images/96717403.jpg" alt="Photography Preview"> <!-- Example Image -->
+                    <div class="item-content">
+                        <h3>Photography</h3>
+                        <p>Capturing unique perspectives on the world through the lens.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item fade-in" onclick="window.location.href=\'pages/books.html\';">
+                    <!-- <img src="images/book_preview.jpg" alt="Books Preview"> -->
+                     <div class="item-content">
+                        <h3>Published Books</h3>
+                        <p>Engaging narratives and thought-provoking ideas across various topics.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item fade-in" onclick="window.location.href=\'pages/music.html\';">
+                    <!-- <img src="images/music_preview.jpg" alt="Music Preview"> -->
+                     <div class="item-content">
+                        <h3>Music Production</h3>
+                        <p>Creating soundscapes that resonate, spanning various genres and emotions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="fade-in">Contact Me</h2>
+            <form action="https://formspree.io/f/jasonclarkagain@gmail.com" method="POST" class="fade-in">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jason Clark. All rights reserved.</p>
+        <p>
+            <a href="https://www.amazon.com/stores/Jason-Clark/author/B073RLPYPV" target="_blank" rel="noopener noreferrer">Amazon Author Page</a> | 
+            <a href="https://soundcloud.com/jason-clark-716319682" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <!-- Add other links as needed -->
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- Add scripts for animations/effects later -->
+</body>
+</html>

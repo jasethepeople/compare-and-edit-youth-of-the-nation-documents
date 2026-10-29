@@ -1,0 +1,146 @@
+/* Contact Page Styles (contact_style.css) */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 800px; /* Slightly narrower for contact forms */
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* Re-use main_header styling from main_style.css for consistency */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-header nav ul li {
+    margin-right: 25px;
+    margin-bottom: 0;
+}
+
+.main-header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #007bff;
+}
+
+.contact-content section {
+    margin-bottom: 40px;
+}
+
+.contact-content h2 {
+    font-size: 2em;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.content-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important for width calculation */
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+#contact-details p {
+    font-size: 1.1em;
+}
+
+#contact-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 15px;
+        padding-top: 70px;
+    }
+    .main-header nav ul li a {
+        font-size: 1em;
+    }
+    .contact-content h2 {
+        font-size: 1.8em;
+    }
+}
+

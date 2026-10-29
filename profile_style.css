@@ -1,0 +1,133 @@
+/* Profile Page Styles (profile_style.css) */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333; /* Darker text for content pages */
+    background-color: #f4f4f4; /* Light background for content pages */
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* Re-use main_header styling from main_style.css for consistency if desired */
+/* Or define specific header for internal pages */
+.main-header {
+    position: fixed; /* Fixed header for content pages */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start; /* Align nav to the left */
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-header nav ul li {
+    margin-right: 25px; /* Horizontal spacing */
+    margin-bottom: 0;
+}
+
+.main-header nav ul li a {
+    color: #333; /* Darker text for header links on light bg */
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400; /* Slightly bolder for readability */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #007bff; /* Accent color on hover */
+}
+
+.profile-content section {
+    margin-bottom: 40px;
+}
+
+.profile-content h2 {
+    font-size: 2em;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.content-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.content-card p, .content-card pre {
+    font-size: 1em;
+    color: #555;
+}
+
+.content-card pre {
+    white-space: pre-wrap; /* Allows text to wrap */
+    word-wrap: break-word;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.project:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project h3 {
+    font-size: 1.4em;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.project p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 15px;
+        padding-top: 70px;
+    }
+    .main-header nav ul li a {
+        font-size: 1em;
+    }
+    .profile-content h2 {
+        font-size: 1.8em;
+    }
+}
+

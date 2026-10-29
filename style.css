@@ -1,0 +1,447 @@
+/* Basic Reset & Body Styles */
+:root {
+    --background-color: #121212; /* Darker background */
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc; /* Example primary color (purple) - adjust based on reference */
+    --secondary-color: #03dac6; /* Example secondary color (teal) - adjust based on reference */
+    --surface-color: #1e1e1e; /* Slightly lighter dark for surfaces */
+    --header-font: 'Poppins', sans-serif; /* Example modern sans-serif */
+    --body-font: 'Roboto', sans-serif; /* Example readable sans-serif */
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+    color: #ffffff;
+    margin-top: 0;
+    font-weight: 700; /* Bolder */
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    opacity: 0.9;
+}
+
+/* Layout & Sections */
+main {
+    /* Add styles if needed */
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for effects */
+}
+
+/* Header & Footer */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 1000;
+    background-color: rgba(18, 18, 18, 0.85); /* Slightly transparent dark header */
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+/* Add class for scrolled header style if needed */
+/* header.scrolled { background-color: rgba(18, 18, 18, 0.95); } */
+
+header nav {
+    display: flex;
+    justify-content: space-between; /* Example */
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    background-color: #0a0a0a;
+    border-top: 1px solid #222;
+}
+
+footer a {
+    color: #aaa;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section Specifics */
+#hero {
+    background-color: var(--background-color); /* Base color */
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Adjust based on reference */
+    padding: 100px 40px; /* More padding */
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+    margin-bottom: 0.3em;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+#hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--secondary-color);
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+#hero p.intro {
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    max-width: 650px;
+    margin-bottom: 2em;
+    color: #ccc;
+}
+
+#hero-background-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind hero content */
+    opacity: 0.3; /* Make effect subtle */
+    /* WebGL canvas will be attached here via JS */
+}
+
+/* About Section */
+#about {
+    background-color: var(--surface-color);
+}
+
+#about .content-wrapper {
+    max-width: 900px;
+    display: flex; /* Example layout */
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+#about img.profile-pic {
+    width: 200px; /* Larger */
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #444;
+    object-fit: cover;
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: var(--background-color);
+}
+
+#portfolio h2 {
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    width: 90%;
+}
+
+.portfolio-item {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden; /* Ensure content stays within bounds */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+}
+
+.portfolio-item .item-content {
+    padding: 20px 25px;
+}
+
+.portfolio-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.portfolio-item p {
+    font-size: 0.95em;
+    color: #bbb;
+    margin-bottom: 0;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--surface-color);
+}
+
+#contact h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+#contact form {
+    max-width: 700px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 15px 20px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--body-font);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.3);
+}
+
+#contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact button {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: #000; /* Dark text on primary button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: var(--header-font);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Basic Animations (Example: Fade-in on scroll) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    /* Add mobile navigation styles (e.g., hamburger menu) */
+
+    #hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+    #hero .subtitle { font-size: clamp(0.9rem, 4vw, 1.2rem); }
+    #hero p.intro { font-size: clamp(0.9rem, 3vw, 1rem); }
+
+    #about .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+        gap: 30px;
+    }
+}
+
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        position: fixed; /* Changed from absolute for better context */
+        right: 0px;
+        height: 100vh; /* Full height */
+        top: 0; /* Align to top */
+        background-color: var(--surface-color); /* Use surface color */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center links vertically */
+        width: 70%; /* Adjust width */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out; /* Smoother transition */
+        padding-top: 60px; /* Add padding to avoid overlap with potential top bar */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+    header nav ul li {
+        opacity: 0;
+        margin: 15px 0; /* Add spacing */
+    }
+    .burger {
+        display: block; /* Show burger on mobile */
+        cursor: pointer;
+        z-index: 1001; /* Ensure burger is above nav panel */
+        position: relative; /* Needed for z-index */
+    }
+    header nav ul.nav-active {
+        transform: translateX(0%);
+    }
+}
+
+/* Keyframes for Nav Link Fade */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Burger Icon Styles */
+.burger {
+    display: none; /* Hidden by default */
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Burger Animation (Toggle Class) */
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.burger.toggle .line2 {
+    opacity: 0;
+}
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Ensure fade-in classes are defined */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly more pronounced */
+    transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smoother cubic-bezier */
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add CTA Link Style */
+.cta-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-link:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    opacity: 1;
+}
+

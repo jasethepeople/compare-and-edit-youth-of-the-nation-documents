@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Clark - Portfolio OS</title>
+    <link rel="stylesheet" href="css/os_style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="taskbar">
+            <button id="start-menu-button">Start</button>
+            <div id="open-windows-icons">
+                <!-- Icons for open windows will go here -->
+            </div>
+            <div id="system-tray">
+                <span id="current-time">2:55 PM</span> <!-- Placeholder, will be dynamic -->
+            </div>
+        </div>
+
+        <div id="start-menu" class="start-menu-hidden">
+            <div class="start-menu-header">
+                Jason Clark OS
+            </div>
+            <ul>
+                <li data-action="open-window" data-window-id="about-window" data-title="About Jason"><img src="images/icons/info_icon.png" alt=""> About Me</li>
+                <li data-action="open-window" data-window-id="experience-window" data-title="My Experience"><img src="images/icons/briefcase_icon.png" alt=""> Experience</li>
+                <li class="has-submenu">
+                    <img src="images/icons/projects_icon.png" alt=""> Projects
+                    <ul class="submenu">
+                        <li data-action="open-window" data-window-id="dev-projects-window" data-title="Development Projects"><img src="images/icons/dev_icon.png" alt=""> Development</li>
+                        <li data-action="open-window" data-window-id="music-projects-window" data-title="Music Ventures"><img src="images/icons/music_icon.png" alt=""> Music</li>
+                        <li data-action="open-window" data-window-id="photo-projects-window" data-title="Photography"><img src="images/icons/photo_icon.png" alt=""> Photography</li>
+                        <li data-action="open-window" data-window-id="books-projects-window" data-title="Literary Works"><img src="images/icons/books_icon.png" alt=""> Books</li>
+                    </ul>
+                </li>
+                <li data-action="open-window" data-window-id="contact-window" data-title="Contact Me"><img src="images/icons/contact_icon.png" alt=""> Contact</li>
+                <hr>
+                <li data-action="open-window" data-window-id="credits-window" data-title="Credits"><img src="images/icons/credits_icon.png" alt=""> Credits</li>
+                <li data-action="shutdown"><img src="images/icons/shutdown_icon.png" alt=""> Shut Down...</li>
+            </ul>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icon" data-action="open-window" data-window-id="about-window" data-title="About Jason">
+            <img src="images/icons/info_icon_large.png" alt="About Me">
+            <span>About Me</span>
+        </div>
+        <div class="desktop-icon" data-action="open-window" data-window-id="resume-window" data-title="My Resume">
+            <img src="images/icons/resume_icon_large.png" alt="Resume">
+            <span>Resume</span>
+        </div>
+         <div class="desktop-icon" data-action="open-window" data-window-id="contact-window" data-title="Contact Me">
+            <img src="images/icons/contact_icon_large.png" alt="Contact Me">
+            <span>Contact Me</span>
+        </div>
+
+        <!-- Windows will be dynamically created here -->
+        <div id="windows-container">
+            <!-- Example Window Structure (template for JS) -->
+            <!-- 
+            <div class="window" id="example-window">
+                <div class="title-bar">
+                    <span class="title">Window Title</span>
+                    <div class="title-bar-controls">
+                        <button class="minimize">_</button>
+                        <button class="maximize">[]</button>
+                        <button class="close">X</button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <p>Window content goes here.</p>
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+
+    <script src="js/os_script.js"></script>
+</body>
+</html>

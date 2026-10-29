@@ -1,0 +1,104 @@
+/* Main Stylesheet for Jason Clark Portfolio (hajimewatanabe.jp mimic) */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #111; /* Fallback background */
+    overflow: hidden; /* To prevent scrollbars from the video */
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#main-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.7; /* Adjust for desired video prominence */
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    /* background-color: rgba(0,0,0,0.3); /* Optional subtle overlay */
+}
+
+.main-header {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-header nav ul li {
+    margin-bottom: 15px;
+}
+
+.main-header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #aaa;
+}
+
+.title-container {
+    /* Centered by flex on .main-container */
+}
+
+.title-container h1 {
+    font-size: 5em; /* Adjust as needed */
+    font-weight: 200; /* Thin font like reference */
+    letter-spacing: 5px; /* Adjust as needed */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+    .title-container h1 {
+        font-size: 3em;
+    }
+    .main-header {
+        top: 20px;
+        left: 20px;
+    }
+    .main-header nav ul li a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container h1 {
+        font-size: 2em;
+    }
+}
+

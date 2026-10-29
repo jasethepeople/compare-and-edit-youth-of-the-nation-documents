@@ -1,0 +1,157 @@
+/* Gallery Page Styles (gallery_style.css) */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for gallery pages */
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 1200px; /* Wider for galleries */
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* Re-use main_header styling from main_style.css for consistency */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-header nav ul li {
+    margin-right: 25px;
+    margin-bottom: 0;
+}
+
+.main-header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #007bff;
+}
+
+.gallery-content h2 {
+    font-size: 2.2em;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1; /* Square images, adjust as needed */
+    object-fit: cover;
+}
+
+/* Styles for book items if different from photography */
+.book-item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.book-item img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.book-item p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.book-item a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.book-item a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 15px;
+        padding-top: 70px;
+    }
+    .main-header nav ul li a {
+        font-size: 1em;
+    }
+    .gallery-content h2 {
+        font-size: 1.8em;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
+

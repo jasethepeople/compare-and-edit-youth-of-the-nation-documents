@@ -1,0 +1,152 @@
+/* Portfolio Page Styles (portfolio_style.css) */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #0a0a0a; /* Dark background for portfolio */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.portfolio-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#portfolio-bg-video {
+    position: fixed; /* Fixed to cover viewport even on scroll */
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.5; /* Adjust for desired video prominence */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px; /* Small gap like reference */
+    width: 80vw; /* Adjust as needed */
+    height: 80vh; /* Adjust as needed */
+    max-width: 1200px;
+    max-height: 800px;
+    z-index: 1;
+}
+
+.portfolio-tile {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em; /* Adjust as needed */
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-tile .tile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Initial opacity for background image */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: -1;
+}
+
+.portfolio-tile:hover .tile-bg {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.portfolio-tile span {
+    position: relative; /* To ensure text is above pseudo-elements or bg */
+    z-index: 2;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Specific tile background images - placeholders, to be replaced */
+.photography .tile-bg {
+    background-image: url('../images/placeholder_photography.jpg'); /* Placeholder */
+}
+.books .tile-bg {
+    background-image: url('../images/placeholder_books.jpg'); /* Placeholder */
+}
+.music .tile-bg {
+    background-image: url('../images/placeholder_music.jpg'); /* Placeholder */
+}
+.contact-tile .tile-bg {
+    background-image: url('../images/placeholder_contact.jpg'); /* Placeholder */
+}
+
+/* Header styling (consistent with index.html) */
+.main-header {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-header nav ul li {
+    margin-bottom: 15px;
+}
+
+.main-header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: #aaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack tiles on smaller screens */
+        grid-template-rows: repeat(4, 1fr);
+        width: 90vw;
+        height: auto; /* Adjust height for stacked tiles */
+        max-height: none;
+    }
+    .portfolio-tile {
+        min-height: 200px; /* Ensure tiles have some height */
+        font-size: 1.5em;
+    }
+    .main-header {
+        top: 20px;
+        left: 20px;
+    }
+    .main-header nav ul li a {
+        font-size: 1em;
+    }
+}
+

@@ -1,0 +1,98 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
+    color: #00FF00; /* Bright green for BIOS text */
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace; /* Monospaced font for BIOS look */
+    font-size: 16px;
+    overflow: hidden; /* Prevent scrollbars during BIOS sequence */
+}
+
+#bios-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.bios-header, .bios-footer {
+    flex-shrink: 0;
+}
+
+.bios-body {
+    flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling if content exceeds screen */
+}
+
+.bios-body p, .bios-header p, .bios-footer p {
+    margin: 5px 0;
+}
+
+.ok-text {
+    color: #00FF00; /* Green for OK status */
+}
+
+#loading-progress p {
+    margin: 2px 0;
+}
+
+.blinking-cursor {
+    animation: blink 1s step-start 0s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+#start-prompt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    padding: 24px;
+    border: 7px solid #FFFFFF; /* White border like reference */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF; /* White text for this prompt */
+    max-width: 500px;
+    z-index: 100;
+}
+
+#start-prompt p {
+    margin-bottom: 10px;
+}
+
+#start-button-container {
+    margin-top: 16px;
+}
+
+#actual-start-button {
+    background-color: #C0C0C0; /* Classic button grey */
+    border: 2px outset #FFFFFF;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', 'Arial', sans-serif; /* Classic UI font */
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+}
+
+#actual-start-button:active {
+    border-style: inset;
+}
+
+/* Hide scrollbar for bios-body but allow scrolling */
+.bios-body::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+.bios-body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+

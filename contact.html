@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jason Clark</title>
+    <link rel="stylesheet" href="css/main_style.css"> <!-- Re-use main_style for header -->
+    <link rel="stylesheet" href="css/contact_style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="main-header">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact-content">
+            <section id="contact-form-section">
+                <h2>Get In Touch</h2>
+                <div class="content-card">
+                    <form id="contact-form" action="https://formspree.io/f/jasonclarkagain@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="contact-details">
+                <h2>Contact Details</h2>
+                <div class="content-card">
+                    <p>Email: <a href="mailto:jasonclarkagain@gmail.com">jasonclarkagain@gmail.com</a></p>
+                    <!-- Add other contact details if available, e.g., LinkedIn -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/contact_script.js"></script>
+</body>
+</html>
